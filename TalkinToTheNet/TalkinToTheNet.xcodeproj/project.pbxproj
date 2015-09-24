@@ -12,6 +12,7 @@
 		4253B9C11BB334ED00904DDC /* FoursquareResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4253B9C01BB334ED00904DDC /* FoursquareResultTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		42D957DA1BB4836100333496 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D957D91BB4836100333496 /* MapKit.framework */; };
 		42D957DC1BB4848800333496 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42D957DB1BB4848800333496 /* CoreLocation.framework */; };
+		42D957DF1BB4938B00333496 /* FoursquareDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D957DE1BB4938B00333496 /* FoursquareDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4A1BAF859400A92AD2 /* main.m */; };
 		8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4D1BAF859400A92AD2 /* AppDelegate.m */; };
 		8D7DCD511BAF859400A92AD2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD501BAF859400A92AD2 /* ViewController.m */; };
@@ -29,6 +30,8 @@
 		4253B9C01BB334ED00904DDC /* FoursquareResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareResultTableViewCell.m; sourceTree = "<group>"; };
 		42D957D91BB4836100333496 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		42D957DB1BB4848800333496 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		42D957DD1BB4938B00333496 /* FoursquareDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoursquareDetailViewController.h; sourceTree = "<group>"; };
+		42D957DE1BB4938B00333496 /* FoursquareDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoursquareDetailViewController.m; sourceTree = "<group>"; };
 		8D7DCD461BAF859400A92AD2 /* TalkinToTheNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkinToTheNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7DCD4A1BAF859400A92AD2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D7DCD4C1BAF859400A92AD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				4253B9BD1BB334A900904DDC /* FoursquareSearchResult.m */,
 				4253B9BF1BB334ED00904DDC /* FoursquareResultTableViewCell.h */,
 				4253B9C01BB334ED00904DDC /* FoursquareResultTableViewCell.m */,
+				42D957DD1BB4938B00333496 /* FoursquareDetailViewController.h */,
+				42D957DE1BB4938B00333496 /* FoursquareDetailViewController.m */,
 				8D7DCD521BAF859400A92AD2 /* Main.storyboard */,
 				8D7DCD551BAF859400A92AD2 /* Assets.xcassets */,
 				8D7DCD571BAF859400A92AD2 /* LaunchScreen.storyboard */,
@@ -181,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4253B9AC1BB3104500904DDC /* APIManager.m in Sources */,
+				42D957DF1BB4938B00333496 /* FoursquareDetailViewController.m in Sources */,
 				8D7DCD511BAF859400A92AD2 /* ViewController.m in Sources */,
 				8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */,
 				4253B9C11BB334ED00904DDC /* FoursquareResultTableViewCell.m in Sources */,

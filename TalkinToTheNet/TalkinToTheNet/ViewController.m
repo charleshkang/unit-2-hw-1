@@ -30,8 +30,6 @@ CLLocationManagerDelegate>
 
 @property (nonatomic) NSMutableArray *searchResults;
 @property (nonatomic) CLLocationManager *locationManager;
-//@property (nonatomic) NSString *longitude;
-//@property (nonatomic) NSString *latitude;
 
 @end
 
@@ -39,7 +37,7 @@ CLLocationManagerDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -60,7 +58,7 @@ CLLocationManagerDelegate>
     
     [errorAlert addAction:okAction];
     
-//    [self presentViewController:errorAlert animated:true completion:nil];
+    //    [self presentViewController:errorAlert animated:true completion:nil];
     
 }
 
@@ -150,12 +148,6 @@ CLLocationManagerDelegate>
     
 }
 
-//#pragma mark - UI
-//- (void)refresh:(UIRefreshControl *)refreshControl {
-//    [refreshControl endRefreshing];
-//}
-
-
 #pragma mark - Table View Data Source
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -177,10 +169,6 @@ CLLocationManagerDelegate>
     cell.venueName.text  = currentResult.venueName;
     cell.categoryName.text = currentResult.category;
     
-    
-    
-    
-    
     return cell;
 }
 
@@ -195,7 +183,7 @@ CLLocationManagerDelegate>
         [self.tableView reloadData];
     }];
     
-        [self.locationManager requestLocation];
+    [self.locationManager requestLocation];
     
     
     return YES;
