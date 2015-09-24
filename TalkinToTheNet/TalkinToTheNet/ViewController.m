@@ -12,6 +12,12 @@
 #import "FoursquareResultTableViewCell.h"
 #import "FoursquareSearchResult.h"
 
+NSString const *clientID = @"55NCEGSMRDWMKEKQWHOAZRLXBEAQAP41MVODXCCIIR1WTAKP";
+NSString const *clientSecret= @"POQGVUIVOI1QBXKQBTCE12ZGDM3WROBNIGVJNIFBHUNIAYE3";
+NSString const *latitude = @"40.725236";
+NSString const *longitude = @"-74.002892";
+
+
 @interface ViewController ()
 <UITableViewDataSource,
 UITableViewDelegate,
@@ -24,8 +30,8 @@ CLLocationManagerDelegate>
 
 @property (nonatomic) NSMutableArray *searchResults;
 @property (nonatomic) CLLocationManager *locationManager;
-@property (nonatomic) NSString *longitude;
-@property (nonatomic) NSString *latitude;
+//@property (nonatomic) NSString *longitude;
+//@property (nonatomic) NSString *latitude;
 
 @end
 
@@ -33,7 +39,7 @@ CLLocationManagerDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -43,14 +49,7 @@ CLLocationManagerDelegate>
     [self.locationManager startUpdatingLocation];
     [self.locationManager requestAlwaysAuthorization];
     
-    
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:refreshControl];
 }
-
-
-
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -61,7 +60,7 @@ CLLocationManagerDelegate>
     
     [errorAlert addAction:okAction];
     
-    [self presentViewController:errorAlert animated:true completion:nil];
+//    [self presentViewController:errorAlert animated:true completion:nil];
     
 }
 
@@ -69,8 +68,8 @@ CLLocationManagerDelegate>
     
     CLLocation *location = locations.firstObject;
     
-    self.longitude = [NSString stringWithFormat:@"%.1f", location.coordinate.longitude];
-    self.latitude = [NSString stringWithFormat:@"%.1f",location.coordinate.latitude];
+    latitude = [NSString stringWithFormat:@"%.1f", location.coordinate.latitude];
+    longitude = [NSString stringWithFormat:@"%.1f",location.coordinate.longitude];
     
     
 }
@@ -80,7 +79,7 @@ CLLocationManagerDelegate>
                                      callback:(void(^)())block{
     
     // Turn url into urlString
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=55NCEGSMRDWMKEKQWHOAZRLXBEAQAP41MVODXCCIIR1WTAKP&client_secret=POQGVUIVOI1QBXKQBTCE12ZGDM3WROBNIGVJNIFBHUNIAYE3&v=20130815&ll=%@,%@&query=%@", self.latitude, self.longitude, searchTerm];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?client_id=55NCEGSMRDWMKEKQWHOAZRLXBEAQAP41MVODXCCIIR1WTAKP&client_secret=POQGVUIVOI1QBXKQBTCE12ZGDM3WROBNIGVJNIFBHUNIAYE3&v=20130815&ll=%@,%@&query=%@",latitude, longitude, searchTerm];
     
     // Turn urlString into an encodedString
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
@@ -95,6 +94,7 @@ CLLocationManagerDelegate>
             
             // Turn data into json
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", json);
             
             // Store the results in an NSDictionary
             NSDictionary *responses = [json objectForKey:@"response"];
@@ -150,10 +150,10 @@ CLLocationManagerDelegate>
     
 }
 
-#pragma mark - UI
-- (void)refresh:(UIRefreshControl *)refreshControl {
-    [refreshControl endRefreshing];
-}
+//#pragma mark - UI
+//- (void)refresh:(UIRefreshControl *)refreshControl {
+//    [refreshControl endRefreshing];
+//}
 
 
 #pragma mark - Table View Data Source
@@ -188,17 +188,17 @@ CLLocationManagerDelegate>
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
-    [self.view endEditing:true];
+    [self.view endEditing:YES];
     
     [self makeFoursquareAPIRequestWithSearchTerm:textField.text callback:^{
         
         [self.tableView reloadData];
     }];
     
-    //    [self.locationManager requestLocation];
+        [self.locationManager requestLocation];
     
     
-    return true;
+    return YES;
 }
 
 @end
