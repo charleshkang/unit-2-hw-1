@@ -7,6 +7,7 @@
 //
 
 #import "FoursquareDetailViewController.h"
+#import "FoursquareResultTableViewCell.h"
 
 @interface FoursquareDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
@@ -48,5 +49,8 @@
     
     self.categoryLabel.text = category;
 }
+
+
+
 
 @end

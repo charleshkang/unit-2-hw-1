@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "FoursquareResultTableViewCell.h"
 #import "FoursquareSearchResult.h"
+#import "FoursquareDetailViewController.h"
 
 NSString const *clientID = @"55NCEGSMRDWMKEKQWHOAZRLXBEAQAP41MVODXCCIIR1WTAKP";
 NSString const *clientSecret= @"POQGVUIVOI1QBXKQBTCE12ZGDM3WROBNIGVJNIFBHUNIAYE3";
