@@ -41,6 +41,7 @@ CLLocationManagerDelegate>
     [self.locationManager requestWhenInUseAuthorization];
     
     [self.locationManager startUpdatingLocation];
+    [self.locationManager requestAlwaysAuthorization];
     
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];

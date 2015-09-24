@@ -13,7 +13,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *venueName;
 @property (weak, nonatomic) IBOutlet UILabel *categoryName;
 
-
-
-
 @end
