@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "FoursquareSearchResult.h"
 
 @interface FoursquareDetailViewController : ViewController
 
-@property (nonatomic) NSDictionary *foursquareData;
+@property (nonatomic) FoursquareSearchResult *foursquareData;
 
 @end

@@ -4,7 +4,6 @@
 //
 //  Created by Michael Kavouras on 9/20/15.
 //  Copyright © 2015 Mike Kavouras. All rights reserved.
-//
 
 #import "ViewController.h"
 #import "APIManager.h"
@@ -18,13 +17,11 @@ NSString const *clientSecret= @"POQGVUIVOI1QBXKQBTCE12ZGDM3WROBNIGVJNIFBHUNIAYE3
 NSString const *latitude = @"40.725236";
 NSString const *longitude = @"-74.002892";
 
-
 @interface ViewController ()
 <UITableViewDataSource,
 UITableViewDelegate,
 UITextFieldDelegate,
 CLLocationManagerDelegate>
-
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
