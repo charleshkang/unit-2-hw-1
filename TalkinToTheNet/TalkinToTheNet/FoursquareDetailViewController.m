@@ -8,6 +8,7 @@
 
 #import "FoursquareDetailViewController.h"
 #import "FoursquareResultTableViewCell.h"
+#import "FoursquareSearchResult.h"
 
 @interface FoursquareDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
@@ -27,7 +28,7 @@
 - (void)updateLabels {
     
     // update location labels from api
-    NSDictionary *location = [self.foursquareData objectForKey:@"location"];
+    FoursquareSearchResult *result = self.foursquareData
     NSArray *formattedAddress= [location objectForKey:@"formattedAddress"];
     
     NSString *address1 = [formattedAddress firstObject];
