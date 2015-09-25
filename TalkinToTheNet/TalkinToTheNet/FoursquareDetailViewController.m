@@ -27,32 +27,10 @@
 
 - (void)updateLabels {
     
-    // update location labels from api
-   // NSDictionary *location = [self.foursquareData objectForKey:@"location"];
-   // NSArray *formattedAddress= [location objectForKey:@"formattedAddress"];
-    
     FoursquareSearchResult *result = self.foursquareData;
     self.categoryLabel.text = result.category;
     self.locationLabel.text = result.address.firstObject;
     
-   // NSString *address1 = [formattedAddress firstObject];
-   // self.locationLabel.text = address1;
-    
-//    if (formattedAddress.count > 1) {
-//        NSString *address2 = formattedAddress[1];
-//        self.locationLabel2.text = address2;
-//        
-//    } else {
-//        self.locationLabel2.text = @" ";
-//    }
-
-
-
-//    NSArray *categoryArray = [self.foursquareData objectForKey:@"categories"];
-//    NSDictionary *categoryObject = [categoryArray firstObject];
-//    NSString *category = [categoryObject objectForKey:@"name"];
-//    
-//    self.categoryLabel.text = category;
 }
 
 
