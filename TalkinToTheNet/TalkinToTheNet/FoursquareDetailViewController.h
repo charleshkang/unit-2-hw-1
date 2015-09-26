@@ -11,6 +11,6 @@
 
 @interface FoursquareDetailViewController : ViewController
 
-@property (nonatomic) FoursquareSearchResult *foursquareData;
+@property (nonatomic) FoursquareSearchResult  *foursquareData;
 
 @end

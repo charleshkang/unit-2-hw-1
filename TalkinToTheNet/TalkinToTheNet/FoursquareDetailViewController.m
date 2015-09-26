@@ -12,8 +12,9 @@
 
 @interface FoursquareDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *menuLabel;
 
 @end
 
@@ -28,8 +29,13 @@
 - (void)updateLabels {
     
     FoursquareSearchResult *result = self.foursquareData;
-    self.categoryLabel.text = result.category;
     self.locationLabel.text = result.address.firstObject;
+    self.categoryLabel.text = result.category;
+    self.phoneNumberLabel.text = result.phoneNumber;
+    //    self.menuLabel.text = result.menuURL;
+    self.menuLabel = result.menuURL;
+
+    
     
 }
 
